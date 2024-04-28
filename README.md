@@ -8,29 +8,25 @@ This repository is dedicated to the project that aims at transforming handwritte
 
 Handwritten Armenian texts, given their unique script and historical importance, present a fascinating challenge for optical character recognition (OCR) systems. The project uses the YOLOv5 model, renowned for its efficiency and accuracy in object detection tasks, to recognize Armenian handwritten characters. Alongside, we employ Label Studio, a versatile tool for data labeling tasks, to annotate images of the handwritten texts efficiently.
 
-## Getting Started
-
 ### Prerequisites
 
 Before diving into this project, you'll need to set up your environment properly. Ensure you have Python 3.8 or higher installed along with pip for managing Python packages.
 
-### Installation
+## How to use
 
-1. Clone the repository
 ```
-    git clone https://github.com/ArmVectores/handwritten_text_detection.git
-    cd handwritten_text_detection
-```
-
-2. Install the required packages
-```
-    pip install -r requirements.txt
+pip install ultralytics
+pip install --upgrade huggingface_hub
+pip install arm_text_detection
 ```
 
-3. Setting up Label Studio for Annotation
+```
+from arm_text_detection.detection import Detector
 
-Follow the official documentation of Label Studio to install it on your machine: [Label Studio Documentation](https://labelstud.io/guide/#Installation). You'll use Label Studio to label your dataset of Armenian handwritten text images.
+detector = Detector()
 
+res = detector.detect("path/to/your/image")
+```
 ### Preparing Your Dataset
 
 To use this model effectively, you'll need a dataset of Armenian handwritten text images. The images should be clearly readable and contain diverse handwriting styles for better model training.
@@ -58,9 +54,6 @@ After training, evaluate your model's performance using the validation dataset. 
 
 Contributions to this project are welcome. Whether it's improving the model's accuracy, expanding the dataset, or enhancing the documentation, your help can make a significant difference.
 
-## License
-
-This project is licensed under [MIT License](LICENSE) - see the LICENSE file for details.
 
 ## Contact
 For any inquiries or collaborations, please contact [ArmVectores](https://github.com/ArmVectores).
