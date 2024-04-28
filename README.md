@@ -1,12 +1,14 @@
 # About project
+
 This project is to some extent an Armenian adaptation of SHIFT OCR, and the adaptation itself was created by students of the HSE Bachelor's degree in Applied Mathematics - Bashmakov Amir and Shagin Renal under the guidance of David Kagramanyan.
+
 # Armenian Handwritten Text Detection
 
-This repository is dedicated to the project that aims at transforming handwritten Armenian texts into digitally printed text using YOLOv5 neural network model. The core of this project revolves around the application of advanced deep learning techniques to understand and convert handwritten Armenian scripts into their digital equivalents, making it significantly easier to preserve, analyze, and reproduce these texts.
+This repository is dedicated to a project that uses advanced deep learning techniques to the recognition of handwritten Armenian scripts. The purpose of the project is to train the YOLOv8n neural network for the task of word detection in handwritten Armenian texts, which will greatly facilitate the preservation, analysis, processing and reproduction of these texts.
 
 ## Project Overview
 
-Handwritten Armenian texts, given their unique script and historical importance, present a fascinating challenge for optical character recognition (OCR) systems. The project uses the YOLOv5 model, renowned for its efficiency and accuracy in object detection tasks, to recognize Armenian handwritten characters. Alongside, we employ Label Studio, a versatile tool for data labeling tasks, to annotate images of the handwritten texts efficiently.
+Handwritten Armenian texts, given their unique script and historical importance, present a fascinating challenge for optical character recognition (OCR) systems. The project uses the YOLOv8n model, renowned for its efficiency and accuracy in object detection tasks, to recognize Armenian handwritten words. 
 
 ### Prerequisites
 
