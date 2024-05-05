@@ -1,0 +1,50 @@
+import numpy as np
+from ultralytics import YOLO
+from huggingface_hub import hf_hub_download
+from matplotlib import pyplot as plt
+from PIL import Image
+
+class Detector:
+    def init(self):
+        model_path = hf_hub_download(repo_id="armvectores/yolov8n_handwritten_text_detection",
+                                     filename="best.pt")
+        self.model = YOLO(model_path)
+
+    def detect(self, img_path):
+        results =  self.model.predict(source=img_path, project='.', name='detected', exist_ok=True, save=True, show=False, show_labels=False, show_conf=False, conf=0.5)
+        boxes = results[0].boxes.xyxy.cpu().numpy()
+        return boxes
+
+    def extract_words(self, img_path, boxes):
+        image = Image.open(img_path)
+        words_images = []
+        for box in boxes:
+            word_image = image.crop((box[0], box[1], box[2], box[3]))
+            words_images.append(word_image)
+
+        return words_images
+
+detector = Detector()
+
+test_blank_path = hf_hub_download(repo_id="armvectores/yolov8n_handwritten_text_detection",
+                                  filename="test_blank.png")
+
+boxes = detector.detect(test_blank_path)
+
+words_images = detector.extract_words(test_blank_path, boxes)
+
+print(boxes)
+
+plt.figure(figsize=(15,10))
+detected_image_path = 'detected/test_blank.png'  # Make sure that the path corresponds to the actual location of the saved image
+plt.imshow(plt.imread(detected_image_path))
+plt.axis('off')
+plt.show()
+
+for i, word_img in enumerate(words_images, start=1):
+    plt.figure(figsize=(200,10))
+    plt.subplot(1, len(words_images), i)
+    plt.imshow(word_img)
+    plt.axis('off')
+    
+plt.show()
