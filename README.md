@@ -33,18 +33,6 @@ To use this model effectively, you'll need a dataset of Armenian handwritten tex
 1. Collect your dataset: Gather a diverse set of handwritten Armenian texts.
 2. Label your dataset: Use Label Studio to annotate the dataset. You'll need to define labels for each Armenian character and possibly for common ligatures or word forms.
 
-### Training the Model
-
-Once your dataset is ready and labeled, you can proceed to train the YOLOv5 model on it.
-
-1. Prepare your data: Organize your data and annotations in a format that YOLOv5 expects. The YOLOv5 documentation provides guidelines on how to structure your dataset.
-
-2. Train your model: Use the following command to start the training process:
-```
-    python train.py --img 640 --batch 16 --epochs 50 --data dataset.yaml --weights yolov5s.pt
-```
-Adjust the parameters according to your dataset size and machine capabilities.
-
 ### Evaluating and Using Your Model
 
 After training, evaluate your model's performance using the validation dataset. If you're satisfied with the results, you can use the trained model to convert handwritten Armenian texts into digital text.
