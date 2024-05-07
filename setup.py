@@ -1,12 +1,12 @@
 from setuptools import setup, find_packages
 
 setup(
-    name = 'MyProject',
-    version = '0.1.0',
+    name = 'handwritten_text_detection',
+    version = '1.0.1',
     url = '',
     description = '',
     packages = find_packages(),
     install_requires = [
-        'ExampleRepo @ git+ssh://git@github.com/example_org/ExampleRepo.git'
+        'handwritten_text_detection @ git+ssh://git@github.com:ArmVectores/handwritten_text_detection.git'
     ]
 )
