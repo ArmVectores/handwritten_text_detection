@@ -1,8 +1,12 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
-setup(name='arm_text_detection',
-      version='0.0',
-      description='Detection armenian text ',
-      packages=['arm_text_detection'],
-      author_email='renalshagin777@gmail.com',
-      zip_safe=False)
+setup(
+    name = 'MyProject',
+    version = '0.1.0',
+    url = '',
+    description = '',
+    packages = find_packages(),
+    install_requires = [
+        'ExampleRepo @ git+ssh://git@github.com/example_org/ExampleRepo.git'
+    ]
+)
