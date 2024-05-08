@@ -47,5 +47,3 @@ For any inquiries or collaborations, please contact [ArmVectores](https://github
 
 
 This brief guide outlines the essential steps to get the project up and running. For detailed information on model training, data labeling, and advanced usage scenarios, please refer to the respective official documentation of the tools and libraries used.
-
-Happy handwriting text detection!
