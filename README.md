@@ -38,7 +38,14 @@ print(boxes)
 #to display the words themselves
 words=detector.extract_words("path/to/your/image",boxes)
 ```
-
+### To download the repository from PyPI (without displaying coordinates and words)
+```
+pip install arm-text-detection
+#And for use
+from arm-text-detection.detection import Detector
+detector=Detector()
+res=detector.detect("path/to/your/image")
+```
 ### Preparing your dataset
 
 To use this model effectively, you will need a set of handwritten text images in Armenian. The images should be well readable to get the best result.
