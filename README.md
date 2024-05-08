@@ -2,40 +2,49 @@
 
 This project is to some extent an Armenian adaptation of SHIFT OCR, and the adaptation itself was created by students of the HSE Bachelor's degree in Applied Mathematics - Bashmakov Amir and Shagin Renal under the guidance of David Kagramanyan.
 
-# Project purpose
+# The purpose of the project
+This repository is dedicated to a project that uses advanced deep learning techniques to recognize handwritten Armenian fonts. The aim of the project is to train the YOLOv8n neural network to recognize words in handwritten Armenian texts, and since this language is not used on the Internet and translators cannot be found anywhere, recognition will greatly facilitate the preservation, analysis, processing and reproduction of these texts.
 
-This repository is dedicated to a project that uses advanced deep learning techniques to the recognition of handwritten Armenian scripts. The purpose of the project is to train the YOLOv8n neural network for the task of word detection in handwritten Armenian texts, which will greatly facilitate the preservation, analysis, processing and reproduction of these texts.
-
-### Prerequisites
-
-Before diving into this project, you'll need to set up your environment properly. Ensure you have Python 3.8 or higher installed along with pip for managing Python packages.
+# Background
+Before you start working on this project, you need to set up your environment correctly. Make sure that you have Python version 3.8 or higher installed, as well as pip for managing Python packages.
 
 ## How to use
-
+#To download the repository
 ```
 pip install ultralytics
 pip install --upgrade huggingface_hub
-pip install arm_text_detection
+pip install https://github.com/ArmVectores/handwritten_text_detection/archive/master.zip
+or
+pip install https://github.com/ArmVectores/handwritten_text_detection/zipball/master
+or
+pip install https://github.com/ArmVectores/handwritten_text_detection/tarball/master
+or
+pip install git+ssh://git@github.com:ArmVectores/handwritten_text_detection.git
+or
+pip install git+https://github.com/ArmVectores/handwritten_text_detection.git
+or
+pip install git+https://github.com/ArmVectores/handwritten_text_detection.git
+```
+#To work with the program
+```
+#to display the coordinates of words
+detector=Detector()
+boxes=detector.detect("path/to/your/image")
+print(boxes)
+```
+```
+#to display the words themselves
+words=detector.extract_words("path/to/your/image",boxes)
 ```
 
-```
-from arm_text_detection.detection import Detector
+### Preparing your dataset
 
-detector = Detector()
+To use this model effectively, you will need a set of handwritten text images in Armenian. The images should be well readable to get the best result.
 
-res = detector.detect("path/to/your/image")
-```
 
-### Preparing Your Dataset
+### Evaluating and using our model
 
-To use this model effectively, you'll need a dataset of Armenian handwritten text images. The images should be clearly readable and contain diverse handwriting styles for better model training.
-
-1. Collect your dataset: Gather a diverse set of handwritten Armenian texts.
-2. Label your dataset: Use Label Studio to annotate the dataset. You'll need to define labels for each Armenian character and possibly for common ligatures or word forms.
-
-### Evaluating and Using Your Model
-
-After training, evaluate your model's performance using the validation dataset. If you're satisfied with the results, you can use the trained model to convert handwritten Armenian texts into digital text.
+You can evaluate the performance of our model using a set of validation data. If you are satisfied with the results, you can use a trained model to convert handwritten Armenian texts into digital text.
 
 ## Contribution
 
