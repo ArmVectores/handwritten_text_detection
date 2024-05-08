@@ -9,7 +9,7 @@ This repository is dedicated to a project that uses advanced deep learning techn
 Before you start working on this project, you need to set up your environment correctly. Make sure that you have Python version 3.8 or higher installed, as well as pip for managing Python packages.
 
 ## How to use
-#To download the repository
+# To download the repository
 ```
 pip install ultralytics
 pip install --upgrade huggingface_hub
@@ -25,7 +25,9 @@ pip install git+https://github.com/ArmVectores/handwritten_text_detection.git
 or
 pip install git+https://github.com/ArmVectores/handwritten_text_detection.git
 ```
-#To work with the program
+
+# To work with the program
+
 ```
 #to display the coordinates of words
 detector=Detector()
