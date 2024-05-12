@@ -22,8 +22,6 @@ or
 pip install git+ssh://git@github.com:ArmVectores/handwritten_text_detection.git
 or
 pip install git+https://github.com/ArmVectores/handwritten_text_detection.git
-or
-pip install git+https://github.com/ArmVectores/handwritten_text_detection.git
 ```
 
 ### To work with the program
